@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=4 uid="uid://bql8ghwu73i1t"]
 
 [ext_resource type="Script" uid="uid://difinr6lnb16h" path="res://Assets/Scripts/levels_stuff.gd" id="1_m4w1b"]
-[ext_resource type="PackedScene" uid="uid://lrsu83xpfcnh" path="res://Assets/Components/ui.tscn" id="2_7f2rm"]
-[ext_resource type="PackedScene" uid="uid://b5golxfodervh" path="res://Assets/Components/ground.tscn" id="3_m6cmb"]
+[ext_resource type="PackedScene" uid="uid://lrsu83xpfcnh" path="res://Assets/Components/GameWorld/ui.tscn" id="2_7f2rm"]
+[ext_resource type="PackedScene" uid="uid://b5golxfodervh" path="res://Assets/Components/GameWorld/ground.tscn" id="3_m6cmb"]
 [ext_resource type="PackedScene" uid="uid://1s04symawjn3" path="res://Assets/Components/player.tscn" id="4_jh7c4"]
-[ext_resource type="PackedScene" uid="uid://b3rpoxy1v1sxv" path="res://Assets/Components/mailbox.tscn" id="5_llecn"]
-[ext_resource type="PackedScene" uid="uid://nrly1p4x0xek" path="res://Assets/Components/mail.tscn" id="6_yet3o"]
+[ext_resource type="PackedScene" uid="uid://b3rpoxy1v1sxv" path="res://Assets/Components/Objects/mailbox.tscn" id="5_llecn"]
+[ext_resource type="PackedScene" uid="uid://nrly1p4x0xek" path="res://Assets/Components/Objects/mail.tscn" id="6_yet3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4w1b"]
 size = Vector2(45.125, 56.625)
@@ -26,7 +26,7 @@ script = ExtResource("1_m4w1b")
 [node name="UI" parent="." instance=ExtResource("2_7f2rm")]
 
 [node name="TileMapLayer" parent="." instance=ExtResource("3_m6cmb")]
-tile_map_data = PackedByteArray("AAD//wAAAAACAAAAAAD//wEAAAACAAEAAAD//wIAAAACAAEAAAD//wMAAAACAAEAAAD//wQAAAACAAEAAAD//wUAAAACAAEAAAD//wYAAAACAAEAAAD//wcAAAACAAEAAAD//wgAAAACAAEAAAD//wkAAAACAAEAAAD+/wkAAAAAAAEAAAD+/wgAAAAAAAEAAAD+/wcAAAAAAAEAAAD+/wYAAAAAAAEAAAD+/wUAAAAAAAEAAAD+/wQAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wAAAAAAAAAAAAD+/woAAAAAAAIAAAD//woAAAABAAIAAAAAAAoAAAABAAMAAAABAAoAAAABAAMAAAACAAoAAAABAAMAAAADAAoAAAABAAMAAAAEAAoAAAABAAMAAAAFAAoAAAABAAMAAAAGAAoAAAABAAMAAAAHAAoAAAABAAMAAAAIAAkAAAAEAAIAAAAJAAkAAAAFAAIAAAAKAAkAAAAFAAIAAAALAAkAAAAFAAIAAAAMAAkAAAAGAAIAAAAMAAgAAAAGAAEAAAALAAgAAAAFAAEAAAAKAAgAAAAFAAEAAAAJAAgAAAAFAAEAAAAIAAgAAAAEAAEAAAAIAAcAAAAEAAAAAAAJAAcAAAAFAAAAAAAKAAcAAAAFAAAAAAALAAcAAAAFAAAAAAAMAAcAAAAGAAAAAAAIAAoAAAABAAMAAAAJAAoAAAABAAMAAAAKAAoAAAABAAMAAAALAAoAAAABAAMAAAAMAAoAAAABAAMAAAANAAoAAAABAAMAAAAOAAoAAAABAAMAAAAPAAoAAAACAAMAAAA=")
+tile_map_data = PackedByteArray("AAAIAAgAAAAEAAEAAAAJAAgAAAAFAAEAAAAKAAgAAAAFAAEAAAALAAgAAAAFAAEAAAAMAAgAAAAGAAEAAAAMAAkAAAAGAAIAAAALAAkAAAAFAAIAAAAKAAkAAAAFAAIAAAAJAAkAAAAFAAIAAAAIAAkAAAAEAAIAAAD//wAAAAACAAAAAAD//wEAAAACAAEAAAD//wIAAAACAAEAAAD//wMAAAACAAEAAAD//wQAAAACAAEAAAD//wUAAAACAAEAAAD//wYAAAACAAEAAAD//wcAAAACAAEAAAD//wgAAAACAAEAAAD//wkAAAACAAEAAAD+/wkAAAAAAAEAAAD+/wgAAAAAAAEAAAD+/wcAAAAAAAEAAAD+/wYAAAAAAAEAAAD+/wUAAAAAAAEAAAD+/wQAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wAAAAAAAAAAAAD+/woAAAAAAAIAAAD//woAAAABAAIAAAAAAAoAAAABAAMAAAABAAoAAAABAAMAAAACAAoAAAABAAMAAAADAAoAAAABAAMAAAAEAAoAAAABAAMAAAAFAAoAAAABAAMAAAAGAAoAAAABAAMAAAAHAAoAAAABAAMAAAAIAAcAAAAEAAAAAAAJAAcAAAAFAAAAAAAKAAcAAAAFAAAAAAALAAcAAAAFAAAAAAAMAAcAAAAGAAAAAAAIAAoAAAABAAMAAAAJAAoAAAABAAMAAAAKAAoAAAABAAMAAAALAAoAAAABAAMAAAAMAAoAAAABAAMAAAANAAoAAAABAAMAAAAOAAoAAAABAAMAAAAPAAoAAAACAAMAAAA=")
 
 [node name="Player" parent="." instance=ExtResource("4_jh7c4")]
 position = Vector2(47, 268)

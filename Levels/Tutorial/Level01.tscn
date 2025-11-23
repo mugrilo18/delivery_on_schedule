@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=4 uid="uid://t7i7yhy0287"]
 
 [ext_resource type="Script" uid="uid://difinr6lnb16h" path="res://Assets/Scripts/levels_stuff.gd" id="1_724ej"]
-[ext_resource type="PackedScene" uid="uid://lrsu83xpfcnh" path="res://Assets/Components/ui.tscn" id="2_fdoxb"]
-[ext_resource type="PackedScene" uid="uid://b5golxfodervh" path="res://Assets/Components/ground.tscn" id="3_7e186"]
+[ext_resource type="PackedScene" uid="uid://lrsu83xpfcnh" path="res://Assets/Components/GameWorld/ui.tscn" id="2_fdoxb"]
+[ext_resource type="PackedScene" uid="uid://b5golxfodervh" path="res://Assets/Components/GameWorld/ground.tscn" id="3_7e186"]
 [ext_resource type="PackedScene" uid="uid://1s04symawjn3" path="res://Assets/Components/player.tscn" id="4_6kxea"]
-[ext_resource type="PackedScene" uid="uid://b3rpoxy1v1sxv" path="res://Assets/Components/mailbox.tscn" id="5_lxdyr"]
-[ext_resource type="PackedScene" uid="uid://nrly1p4x0xek" path="res://Assets/Components/mail.tscn" id="6_7ybsl"]
+[ext_resource type="PackedScene" uid="uid://b3rpoxy1v1sxv" path="res://Assets/Components/Objects/mailbox.tscn" id="5_lxdyr"]
+[ext_resource type="PackedScene" uid="uid://nrly1p4x0xek" path="res://Assets/Components/Objects/mail.tscn" id="6_7ybsl"]
 [ext_resource type="FontFile" uid="uid://bf3mkkgtqpol8" path="res://Assets/Art/Fonts/Silkscreen-Regular.ttf" id="7_fdoxb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7e186"]
