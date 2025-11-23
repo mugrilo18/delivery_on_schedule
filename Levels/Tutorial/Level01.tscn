@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=4 uid="uid://t7i7yhy0287"]
+
+[ext_resource type="Script" uid="uid://difinr6lnb16h" path="res://Assets/Scripts/levels_stuff.gd" id="1_724ej"]
+[ext_resource type="PackedScene" uid="uid://lrsu83xpfcnh" path="res://Assets/Components/ui.tscn" id="2_fdoxb"]
+[ext_resource type="PackedScene" uid="uid://b5golxfodervh" path="res://Assets/Components/ground.tscn" id="3_7e186"]
+[ext_resource type="PackedScene" uid="uid://1s04symawjn3" path="res://Assets/Components/player.tscn" id="4_6kxea"]
+[ext_resource type="PackedScene" uid="uid://b3rpoxy1v1sxv" path="res://Assets/Components/mailbox.tscn" id="5_lxdyr"]
+[ext_resource type="PackedScene" uid="uid://nrly1p4x0xek" path="res://Assets/Components/mail.tscn" id="6_7ybsl"]
+[ext_resource type="FontFile" uid="uid://bf3mkkgtqpol8" path="res://Assets/Art/Fonts/Silkscreen-Regular.ttf" id="7_fdoxb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7e186"]
+font = ExtResource("7_fdoxb")
+
+[node name="Tutorial01" type="Node2D"]
+script = ExtResource("1_724ej")
+
+[node name="UI" parent="." instance=ExtResource("2_fdoxb")]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_7e186")]
+tile_map_data = PackedByteArray("AAALAAgAAAAAAAMAAAAMAAgAAAACAAMAAAAUAAkAAAAAAAEAAAAVAAkAAAACAAEAAAAVAAgAAAACAAEAAAAUAAgAAAAAAAEAAAD//wAAAAACAAAAAAD//wEAAAACAAEAAAD//wIAAAACAAEAAAD//wMAAAACAAEAAAD//wQAAAACAAEAAAD//wUAAAACAAEAAAD//wYAAAACAAEAAAD//wcAAAACAAEAAAD//wgAAAACAAEAAAD//wkAAAACAAEAAAD+/wkAAAAAAAEAAAD+/wgAAAAAAAEAAAD+/wcAAAAAAAEAAAD+/wYAAAAAAAEAAAD+/wUAAAAAAAEAAAD+/wQAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wAAAAAAAAAAAAD+/woAAAAAAAIAAAD//woAAAABAAIAAAAAAAoAAAABAAMAAAABAAoAAAABAAMAAAACAAoAAAABAAMAAAADAAoAAAABAAMAAAAEAAoAAAABAAMAAAAFAAoAAAABAAMAAAAGAAoAAAABAAMAAAAHAAoAAAABAAMAAAAIAAoAAAABAAMAAAAJAAoAAAACAAMAAAAJAAYAAAACAAMAAAAIAAYAAAAAAAMAAAANAAUAAAAAAAMAAAAOAAUAAAACAAMAAAAUAAUAAAAAAAAAAAAVAAUAAAACAAAAAAAVAAYAAAACAAEAAAAUAAYAAAAAAAEAAAAUAAcAAAAAAAEAAAAUAAoAAAAAAAIAAAAVAAoAAAACAAIAAAAVAAcAAAACAAEAAAAbAAoAAAAAAAMAAAAcAAoAAAABAAMAAAAdAAoAAAABAAMAAAAeAAoAAAABAAMAAAAfAAoAAAABAAMAAAAgAAoAAAABAAIAAAAgAAkAAAAAAAEAAAAgAAgAAAAAAAEAAAAgAAcAAAAAAAEAAAAgAAYAAAAAAAEAAAAgAAUAAAAAAAEAAAAgAAQAAAAAAAEAAAAgAAMAAAAAAAEAAAAgAAIAAAAAAAEAAAAgAAEAAAAAAAEAAAAgAAAAAAAAAAAAAAAhAAAAAAACAAAAAAAhAAEAAAACAAEAAAAhAAIAAAACAAEAAAAhAAMAAAACAAEAAAAhAAQAAAACAAEAAAAhAAUAAAACAAEAAAAhAAYAAAACAAEAAAAhAAcAAAACAAEAAAAhAAgAAAACAAEAAAAhAAkAAAACAAEAAAAhAAoAAAACAAIAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("4_6kxea")]
+position = Vector2(47, 268)
+
+[node name="Mailbox" parent="." instance=ExtResource("5_lxdyr")]
+position = Vector2(1005, 300)
+nextStage = "uid://bqbo6p6oocnwf"
+
+[node name="Mail" type="Node" parent="."]
+
+[node name="Letter" parent="Mail" instance=ExtResource("6_7ybsl")]
+position = Vector2(673, 140)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 7.0
+offset_right = 407.0
+offset_bottom = 56.0
+text = "Collect all the letters and
+deliver them to the mailbox."
+label_settings = SubResource("LabelSettings_7e186")

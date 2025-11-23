@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3rpoxy1v1sxv"]
+
+[ext_resource type="Script" uid="uid://d00is6mvosjv4" path="res://Assets/Scripts/Objects/mailbox.gd" id="1_8vbg5"]
+[ext_resource type="Texture2D" uid="uid://bibxec04h3518" path="res://Assets/Art/Placeholders/Placeholder_mailbox.png" id="1_nurv7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nurv7"]
+radius = 16.0
+
+[node name="Mailbox" type="Area2D"]
+script = ExtResource("1_8vbg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nurv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nurv7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

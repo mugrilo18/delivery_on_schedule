@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=4 uid="uid://bql8ghwu73i1t"]
+
+[ext_resource type="Script" uid="uid://difinr6lnb16h" path="res://Assets/Scripts/levels_stuff.gd" id="1_m4w1b"]
+[ext_resource type="PackedScene" uid="uid://lrsu83xpfcnh" path="res://Assets/Components/ui.tscn" id="2_7f2rm"]
+[ext_resource type="PackedScene" uid="uid://b5golxfodervh" path="res://Assets/Components/ground.tscn" id="3_m6cmb"]
+[ext_resource type="PackedScene" uid="uid://1s04symawjn3" path="res://Assets/Components/player.tscn" id="4_jh7c4"]
+[ext_resource type="PackedScene" uid="uid://b3rpoxy1v1sxv" path="res://Assets/Components/mailbox.tscn" id="5_llecn"]
+[ext_resource type="PackedScene" uid="uid://nrly1p4x0xek" path="res://Assets/Components/mail.tscn" id="6_yet3o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4w1b"]
+size = Vector2(45.125, 56.625)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m4w1b"]
+radial_velocity_min = 64.71998
+radial_velocity_max = 64.71998
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -82.2
+radial_accel_max = -82.2
+scale_min = 0.0
+scale_max = 4.0
+color = Color(0.20784314, 0.75686276, 1, 1)
+
+[node name="Tutorial04" type="Node2D"]
+script = ExtResource("1_m4w1b")
+
+[node name="UI" parent="." instance=ExtResource("2_7f2rm")]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_m6cmb")]
+tile_map_data = PackedByteArray("AAD//wAAAAACAAAAAAD//wEAAAACAAEAAAD//wIAAAACAAEAAAD//wMAAAACAAEAAAD//wQAAAACAAEAAAD//wUAAAACAAEAAAD//wYAAAACAAEAAAD//wcAAAACAAEAAAD//wgAAAACAAEAAAD//wkAAAACAAEAAAD+/wkAAAAAAAEAAAD+/wgAAAAAAAEAAAD+/wcAAAAAAAEAAAD+/wYAAAAAAAEAAAD+/wUAAAAAAAEAAAD+/wQAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wIAAAAAAAEAAAD+/wEAAAAAAAEAAAD+/wAAAAAAAAAAAAD+/woAAAAAAAIAAAD//woAAAABAAIAAAAAAAoAAAABAAMAAAABAAoAAAABAAMAAAACAAoAAAABAAMAAAADAAoAAAABAAMAAAAEAAoAAAABAAMAAAAFAAoAAAABAAMAAAAGAAoAAAABAAMAAAAHAAoAAAABAAMAAAAIAAkAAAAEAAIAAAAJAAkAAAAFAAIAAAAKAAkAAAAFAAIAAAALAAkAAAAFAAIAAAAMAAkAAAAGAAIAAAAMAAgAAAAGAAEAAAALAAgAAAAFAAEAAAAKAAgAAAAFAAEAAAAJAAgAAAAFAAEAAAAIAAgAAAAEAAEAAAAIAAcAAAAEAAAAAAAJAAcAAAAFAAAAAAAKAAcAAAAFAAAAAAALAAcAAAAFAAAAAAAMAAcAAAAGAAAAAAAIAAoAAAABAAMAAAAJAAoAAAABAAMAAAAKAAoAAAABAAMAAAALAAoAAAABAAMAAAAMAAoAAAABAAMAAAANAAoAAAABAAMAAAAOAAoAAAABAAMAAAAPAAoAAAACAAMAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("4_jh7c4")]
+position = Vector2(47, 268)
+
+[node name="Mailbox" parent="." instance=ExtResource("5_llecn")]
+position = Vector2(1073, 15)
+nextStage = "uid://t7i7yhy0287"
+
+[node name="Mail" type="Node" parent="."]
+
+[node name="Letter" parent="Mail" instance=ExtResource("6_yet3o")]
+position = Vector2(339, 203)
+
+[node name="Letter2" parent="Mail" instance=ExtResource("6_yet3o")]
+position = Vector2(803, 109)
+
+[node name="Letter3" parent="Mail" instance=ExtResource("6_yet3o")]
+position = Vector2(953, 303)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(240.5625, 292.3125)
+shape = SubResource("RectangleShape2D_m4w1b")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D/CollisionShape2D"]
+position = Vector2(0.4375, -0.3125)
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_m4w1b")

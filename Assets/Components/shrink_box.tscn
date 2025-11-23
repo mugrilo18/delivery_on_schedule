@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2g4ktm2xeo64"]
+
+[ext_resource type="Script" uid="uid://bqnt3137qy4gv" path="res://Assets/Scripts/Objects/shrink_box.gd" id="1_w4gt5"]
+[ext_resource type="Texture2D" uid="uid://dnxseg0iakkp7" path="res://Assets/Art/ConceptArt/Shrink_box.png" id="2_oyxvw"]
+[ext_resource type="Script" uid="uid://ccdsj4pxucqtg" path="res://Assets/Scripts/Objects/identify_wall_box.gd" id="3_oyxvw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4gt5"]
+radius = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8o8a"]
+size = Vector2(32, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oyxvw"]
+radius = 16.03122
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_im7qc"]
+size = Vector2(30, 30)
+
+[node name="ShrinkBox" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 11
+lock_rotation = true
+script = ExtResource("1_w4gt5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oyxvw")
+
+[node name="ShrinkArea" type="Area2D" parent="." groups=["ShrinkBox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrinkArea"]
+shape = SubResource("CircleShape2D_w4gt5")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="IdentifyWall" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("3_oyxvw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IdentifyWall"]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_j8o8a")
+debug_color = Color(0.7764706, 0, 0.79607844, 0.21176471)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -25)
+
+[node name="circle" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oyxvw")
+
+[node name="Square" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_im7qc")
+
+[connection signal="area_entered" from="IdentifyWall" to="IdentifyWall" method="_on_area_entered"]
+[connection signal="area_exited" from="IdentifyWall" to="IdentifyWall" method="_on_area_exited"]
+[connection signal="body_exited" from="IdentifyWall" to="IdentifyWall" method="_on_body_exited"]

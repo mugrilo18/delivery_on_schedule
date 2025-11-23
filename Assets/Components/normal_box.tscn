@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmfy7crdxhc57"]
+
+[ext_resource type="Texture2D" uid="uid://xxfgql55lxyv" path="res://Assets/Art/ConceptArt/Normal_box.png" id="1_xebew"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xebew"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xebew"]
+size = Vector2(30, 30)
+
+[node name="NormalBox" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 11
+can_sleep = false
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xebew")
+
+[node name="Circle" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xebew")
+
+[node name="Square" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xebew")
