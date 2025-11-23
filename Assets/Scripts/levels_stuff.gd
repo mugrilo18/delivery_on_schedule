@@ -10,7 +10,12 @@ extends Node2D
 func _process(_delta: float) -> void:
 	uiNode.lettersQty.text = str(letters) + "/" + str(maxMail)
 	PlayerDead()
+	RestartLevel()
 
 func PlayerDead():
-	if player.global_position.y >= player.get_child(2).limit_bottom:
+	if player.global_position.y >= player.camera_2d.limit_bottom:
+		get_tree().call_deferred("reload_current_scene")
+
+func RestartLevel():
+	if Input.is_action_just_pressed("restart"):
 		get_tree().call_deferred("reload_current_scene")
