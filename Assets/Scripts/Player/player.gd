@@ -28,11 +28,13 @@ func _physics_process(delta: float) -> void:
 			collision.get_collider().apply_central_impulse(collision.get_normal() * -pushForce)
 	
 	move_and_slide()
+	
+	print(wall.collide_with_bodies)
 
 func Shrink():
 	transform.x /= 2
 	transform.y /= 2
-	get_child(2).zoom += Vector2(0.5, 0.5)
+	get_child(3).zoom += Vector2(0.5, 0.5)
 	jumpVelocity = -400.0 / 1.5
 	size = 1
 
@@ -55,12 +57,12 @@ func Normal():
 		1:
 			transform.x *= 2
 			transform.y *= 2
-			get_child(2).zoom -= Vector2(0.5, 0.5)
+			get_child(3).zoom -= Vector2(0.5, 0.5)
 			jumpVelocity = -400.0
 			size = 0
 		2:
 			transform.x /= 2
 			transform.y /= 2
-			get_child(2).zoom += Vector2(0.5, 0.5)
+			get_child(3).zoom += Vector2(0.5, 0.5)
 			jumpVelocity = -400.0
 			size = 0
